@@ -13,7 +13,7 @@ export default function Logo({ className = "" }: LogoProps) {
       <div className="relative flex-shrink-0 h-full flex items-center">
         <Image
           src="/images/logo1.png"
-          alt="FAT SHOP ACC Logo"
+          alt="HIEU SHOP ACC Logo"
           width={100}
           height={100}
           className="object-contain h-full w-auto max-h-full"
@@ -23,14 +23,14 @@ export default function Logo({ className = "" }: LogoProps) {
 
       {/* Text và Slogan */}
       <div className="flex flex-col justify-center h-full py-1">
-        {/* Text chính - FAT SHOP ACC */}
-        <span 
+        {/* Text chính - HIEU SHOP ACC */}
+        <span
           className="text-xl md:text-2xl font-bold uppercase tracking-wide text-white leading-tight"
           style={{
             fontFamily: "var(--font-nosifer), sans-serif"
           }}
         >
-          FAT SHOP ACC
+          HIEU SHOP ACC
         </span>
 
         {/* Slogan */}

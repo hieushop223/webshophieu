@@ -20,8 +20,8 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Fat shop account",
-  description: "Fat shop account",
+  title: "hieu shop acc",
+  description: "hieu shop acc",
   icons: {
     icon: [
       { url: '/icon.png', sizes: '32x32', type: 'image/png' },

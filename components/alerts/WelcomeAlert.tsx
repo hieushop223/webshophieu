@@ -24,7 +24,7 @@ export default function WelcomeAlert() {
       <div className="relative w-auto">
         <Alert
           radius="lg"
-          title="AE TỚI WEB FAT SHOP ĐỂ MUA ĐƯỢC ACCOUNT GIÁ RẺ NHẤT NHA"
+          title="AE TỚI WEB HIEU SHOP ĐỂ MUA ĐƯỢC ACCOUNT GIÁ RẺ NHẤT NHA"
           className="bg-black dark:bg-black border-2 border-white/40 shadow-2xl relative p-6"
         >
           <button

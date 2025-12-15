@@ -79,7 +79,7 @@ export default function Navbar({ adminName = "Admin", adminAvatar = "/images/bap
         {/* Logo */}
         <div className="flex items-center gap-2">   {/* Logo */}
         <Link href="/" className="navbar-logo text-white dark:text-white px-2 py-1 rounded hover:opacity-80 transition-opacity">
-          FAT SHOP ACC
+          HIEU SHOP ACC
         </Link>
         <ModeToggle />
         </div>
