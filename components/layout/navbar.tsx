@@ -18,7 +18,7 @@ interface NavbarProps {
   adminAvatar?: string;
 }
 
-export default function Navbar({ adminName = "Admin", adminAvatar = "/images/bape.png" }: NavbarProps) {
+export default function Navbar({ adminName = "Admin", adminAvatar = "/images/avatar.png" }: NavbarProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isUCAlertOpen, setIsUCAlertOpen] = useState(false);
   const [isAddAccountAlertOpen, setIsAddAccountAlertOpen] = useState(false);
@@ -52,13 +52,13 @@ export default function Navbar({ adminName = "Admin", adminAvatar = "/images/bap
           <Link href="/" className="nav-link">Trang chủ</Link>
           {isAdmin && (
             <>
-              <button 
+              <button
                 onClick={() => setIsAddAccountAlertOpen(true)}
                 className="nav-link-button"
               >
                 Thêm tài khoản
               </button>
-              <button 
+              <button
                 onClick={() => setIsBulkDeleteAlertOpen(true)}
                 className="nav-link-button text-red-400 hover:text-red-300"
               >
@@ -69,13 +69,13 @@ export default function Navbar({ adminName = "Admin", adminAvatar = "/images/bap
               </Link>
             </>
           )}
-          <button 
+          <button
             onClick={() => setIsUCAlertOpen(true)}
             className="nav-link-button"
           >
             Nạp UC
           </button>
-          <button 
+          <button
             onClick={() => setIsAboutAlertOpen(true)}
             className="nav-link-button"
           >
@@ -111,11 +111,11 @@ export default function Navbar({ adminName = "Admin", adminAvatar = "/images/bap
           >
             {isMenuOpen ? (
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12"/>
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
               </svg>
             ) : (
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16"/>
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
               </svg>
             )}
           </button>
@@ -128,7 +128,7 @@ export default function Navbar({ adminName = "Admin", adminAvatar = "/images/bap
           <Link href="/" onClick={() => setIsMenuOpen(false)} className="mobile-link">Trang chủ</Link>
           {isAdmin && (
             <>
-              <button 
+              <button
                 onClick={() => {
                   setIsMenuOpen(false);
                   setIsAddAccountAlertOpen(true);
@@ -137,7 +137,7 @@ export default function Navbar({ adminName = "Admin", adminAvatar = "/images/bap
               >
                 Thêm tài khoản
               </button>
-              <button 
+              <button
                 onClick={() => {
                   setIsMenuOpen(false);
                   setIsBulkDeleteAlertOpen(true);
@@ -151,7 +151,7 @@ export default function Navbar({ adminName = "Admin", adminAvatar = "/images/bap
               </Link>
             </>
           )}
-          <button 
+          <button
             onClick={() => {
               setIsMenuOpen(false);
               setIsUCAlertOpen(true);
@@ -161,7 +161,7 @@ export default function Navbar({ adminName = "Admin", adminAvatar = "/images/bap
             Nạp UC
           </button>
 
-          <button 
+          <button
             onClick={() => {
               setIsMenuOpen(false);
               setIsAboutAlertOpen(true);
@@ -186,29 +186,29 @@ export default function Navbar({ adminName = "Admin", adminAvatar = "/images/bap
           )}
         </nav>
       </div>
-      
+
       {/* UC Alert */}
       <UCAlert isOpen={isUCAlertOpen} onClose={() => setIsUCAlertOpen(false)} />
-      
+
       {/* Add Account Alert */}
-      <AddAccountAlert 
-        isOpen={isAddAccountAlertOpen} 
+      <AddAccountAlert
+        isOpen={isAddAccountAlertOpen}
         onClose={() => setIsAddAccountAlertOpen(false)}
         onSuccess={() => {
           // Refresh page to show new accounts
           window.location.reload();
         }}
       />
-      
+
       {/* About Alert */}
-      <AboutAlert 
-        isOpen={isAboutAlertOpen} 
+      <AboutAlert
+        isOpen={isAboutAlertOpen}
         onClose={() => setIsAboutAlertOpen(false)}
       />
-      
+
       {/* Bulk Delete Alert */}
-      <BulkDeleteAlert 
-        isOpen={isBulkDeleteAlertOpen} 
+      <BulkDeleteAlert
+        isOpen={isBulkDeleteAlertOpen}
         onClose={() => setIsBulkDeleteAlertOpen(false)}
         onSuccess={() => {
           // Page will reload automatically after success

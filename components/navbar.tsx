@@ -16,7 +16,7 @@ interface NavbarProps {
   adminAvatar?: string;
 }
 
-export default function Navbar({ adminName = "Admin", adminAvatar = "/images/bape.png" }: NavbarProps) {
+export default function Navbar({ adminName = "Admin", adminAvatar = "/images/avatar.png" }: NavbarProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isPriceDropdownOpen, setIsPriceDropdownOpen] = useState(false);
   const [isUCAlertOpen, setIsUCAlertOpen] = useState(false);
@@ -54,8 +54,8 @@ export default function Navbar({ adminName = "Admin", adminAvatar = "/images/bap
     setIsPriceDropdownOpen(false);
     // Dispatch event with proper detail - only once on window
     if (typeof window !== 'undefined') {
-      const event = new CustomEvent("priceFilter", { 
-        detail: range, 
+      const event = new CustomEvent("priceFilter", {
+        detail: range,
         bubbles: true,
         cancelable: true
       });
@@ -78,17 +78,17 @@ export default function Navbar({ adminName = "Admin", adminAvatar = "/images/bap
       <div className="max-w-7xl mx-auto flex items-center justify-between px-4 py-1">
         {/* Logo */}
         <div className="flex items-center gap-2">   {/* Logo */}
-        <Link href="/" className="navbar-logo text-white dark:text-white px-2 py-1 rounded hover:opacity-80 transition-opacity">
-          HIEU SHOP ACC
-        </Link>
-        <ModeToggle />
+          <Link href="/" className="navbar-logo text-white dark:text-white px-2 py-1 rounded hover:opacity-80 transition-opacity">
+            HIEU SHOP ACC
+          </Link>
+          <ModeToggle />
         </div>
         {/* Desktop */}
         <nav className="hidden md:flex items-center gap-4 relative text-white dark:text-white">
           <Link href="/" className="nav-link">Trang chủ</Link>
           {isAdmin && (
             <>
-              <button 
+              <button
                 onClick={() => setIsAddAccountAlertOpen(true)}
                 className="nav-link-button"
               >
@@ -99,7 +99,7 @@ export default function Navbar({ adminName = "Admin", adminAvatar = "/images/bap
               </Link>
             </>
           )}
-          <button 
+          <button
             onClick={() => setIsUCAlertOpen(true)}
             className="nav-link-button"
           >
@@ -117,7 +117,7 @@ export default function Navbar({ adminName = "Admin", adminAvatar = "/images/bap
                 stroke="currentColor"
                 viewBox="0 0 24 24"
               >
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7"/>
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
               </svg>
             </button>
             {isPriceDropdownOpen && (
@@ -130,7 +130,7 @@ export default function Navbar({ adminName = "Admin", adminAvatar = "/images/bap
               </div>
             )}
           </div>
-          <button 
+          <button
             onClick={() => setIsAboutAlertOpen(true)}
             className="nav-link-button"
           >
@@ -166,11 +166,11 @@ export default function Navbar({ adminName = "Admin", adminAvatar = "/images/bap
           >
             {isMenuOpen ? (
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12"/>
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
               </svg>
             ) : (
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16"/>
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
               </svg>
             )}
           </button>
@@ -183,7 +183,7 @@ export default function Navbar({ adminName = "Admin", adminAvatar = "/images/bap
           <Link href="/" onClick={() => setIsMenuOpen(false)} className="mobile-link">Trang chủ</Link>
           {isAdmin && (
             <>
-              <button 
+              <button
                 onClick={() => {
                   setIsMenuOpen(false);
                   setIsAddAccountAlertOpen(true);
@@ -197,7 +197,7 @@ export default function Navbar({ adminName = "Admin", adminAvatar = "/images/bap
               </Link>
             </>
           )}
-          <button 
+          <button
             onClick={() => {
               setIsMenuOpen(false);
               setIsUCAlertOpen(true);
@@ -219,7 +219,7 @@ export default function Navbar({ adminName = "Admin", adminAvatar = "/images/bap
                 stroke="currentColor"
                 viewBox="0 0 24 24"
               >
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7"/>
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
               </svg>
             </button>
 
@@ -228,11 +228,11 @@ export default function Navbar({ adminName = "Admin", adminAvatar = "/images/bap
                 {priceRanges.map((item) => (
                   <button
                     key={item.range}
-                    onClick={(e) => { 
+                    onClick={(e) => {
                       e.preventDefault();
                       e.stopPropagation();
-                      setIsMenuOpen(false); 
-                      setIsPriceDropdownOpen(false); 
+                      setIsMenuOpen(false);
+                      setIsPriceDropdownOpen(false);
                       // Use setTimeout to ensure state updates complete before dispatching event
                       setTimeout(() => {
                         handlePriceFilter(item.range);
@@ -241,8 +241,8 @@ export default function Navbar({ adminName = "Admin", adminAvatar = "/images/bap
                     onTouchEnd={(e) => {
                       e.preventDefault();
                       e.stopPropagation();
-                      setIsMenuOpen(false); 
-                      setIsPriceDropdownOpen(false); 
+                      setIsMenuOpen(false);
+                      setIsPriceDropdownOpen(false);
                       setTimeout(() => {
                         handlePriceFilter(item.range);
                       }, 0);
@@ -256,7 +256,7 @@ export default function Navbar({ adminName = "Admin", adminAvatar = "/images/bap
             )}
           </div>
 
-          <button 
+          <button
             onClick={() => {
               setIsMenuOpen(false);
               setIsAboutAlertOpen(true);
@@ -281,23 +281,23 @@ export default function Navbar({ adminName = "Admin", adminAvatar = "/images/bap
           )}
         </nav>
       </div>
-      
+
       {/* UC Alert */}
       <UCAlert isOpen={isUCAlertOpen} onClose={() => setIsUCAlertOpen(false)} />
-      
+
       {/* Add Account Alert */}
-      <AddAccountAlert 
-        isOpen={isAddAccountAlertOpen} 
+      <AddAccountAlert
+        isOpen={isAddAccountAlertOpen}
         onClose={() => setIsAddAccountAlertOpen(false)}
         onSuccess={() => {
           // Refresh page to show new accounts
           window.location.reload();
         }}
       />
-      
+
       {/* About Alert */}
-      <AboutAlert 
-        isOpen={isAboutAlertOpen} 
+      <AboutAlert
+        isOpen={isAboutAlertOpen}
         onClose={() => setIsAboutAlertOpen(false)}
       />
     </header>

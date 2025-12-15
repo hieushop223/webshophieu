@@ -50,7 +50,7 @@ export default function LoginPage() {
           <div className="login-header">
             <Avatar
               name="Admin"
-              src="/images/bape.png"
+              src="/images/avatar.png"
               className="avatar-large"
             />
           </div>
