@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
+import { formatMainAcc, formatTitle } from "@/lib/utils";
 import "./card.css";
 
 interface CardProps {
@@ -73,7 +74,7 @@ export default function Card({ imageUrl, title, description, price, onClick, onS
         {imageUrl ? (
           <Image
             src={imageUrl}
-            alt={title}
+            alt={formatTitle(title)}
             width={400}
             height={300}
             className="card-image-img"
@@ -108,7 +109,7 @@ export default function Card({ imageUrl, title, description, price, onClick, onS
 
       <div className="card-content">
         <div className="card-title-row">
-          <h3 className="card-title">{title}</h3>
+          <h3 className="card-title">{formatTitle(title)}</h3>
           <div className="card-price">{priceDisplay} VND</div>
         </div>
 
@@ -128,7 +129,7 @@ export default function Card({ imageUrl, title, description, price, onClick, onS
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
             </svg>
             <span className="card-main-acc-label">Chủ TK:</span>
-            <span className="card-main-acc-value">{mainAcc}</span>
+            <span className="card-main-acc-value">{formatMainAcc(mainAcc)}</span>
           </div>
         )}
 

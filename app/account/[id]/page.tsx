@@ -11,6 +11,7 @@ import { useIsAdmin } from '@/app/lib/useIsAdmin';
 import { AccountCarousel } from '@/components/features/AccountCarousel';
 import InstallmentAlert from '@/components/alerts/InstallmentAlert';
 import ContactAlert from '@/components/alerts/ContactAlert';
+import { formatMainAcc, formatTitle } from '@/lib/utils';
 import './page.css';
 
 export default function AccountDetailPage() {
@@ -213,7 +214,7 @@ export default function AccountDetailPage() {
                   <div className="account-main-image-wrapper">
                     <Image
                       src={accountImages[selectedImageIndex]}
-                      alt={account.title || 'Account image'}
+                      alt={formatTitle(account.title) || 'Account image'}
                       width={800}
                       height={600}
                       className="account-image"
@@ -306,7 +307,7 @@ export default function AccountDetailPage() {
               <div className="account-details-content">
                 <div className="account-title-row">
                   <h1 className="account-title">
-                    {account.title || 'Không có tiêu đề'}
+                    {formatTitle(account.title) || 'Không có tiêu đề'}
                   </h1>
                   <div className="account-price-badge-inline">
                     {formatPrice(account.price)} VND
@@ -329,7 +330,7 @@ export default function AccountDetailPage() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                     </svg>
                     <span className="account-main-acc-label">Chủ tài khoản:</span>
-                    <span className="account-main-acc-value">{account.main_acc}</span>
+                    <span className="account-main-acc-value">{formatMainAcc(account.main_acc)}</span>
                   </div>
                 )}
 
@@ -363,7 +364,7 @@ export default function AccountDetailPage() {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                       </svg>
                       <span className="account-main-acc-label">Chủ sở hữu:</span>
-                      <span className="account-main-acc-value">{account.main_acc}</span>
+                      <span className="account-main-acc-value">{formatMainAcc(account.main_acc)}</span>
                     </div>
                   </div>
                 )}
@@ -450,7 +451,7 @@ export default function AccountDetailPage() {
             </button>
             <img
               src={accountImages[selectedImageIndex]}
-              alt={account.title || 'Account image zoomed'}
+              alt={formatTitle(account.title) || 'Account image zoomed'}
               className="account-image-zoomed"
               onError={(e) => {
                 const target = e.target as HTMLImageElement;

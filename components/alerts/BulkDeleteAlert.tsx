@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 import { supabase } from "@/app/lib/supabase";
+import { formatMainAcc, formatTitle } from "@/lib/utils";
 
 interface BulkDeleteAlertProps {
   isOpen: boolean;
@@ -614,7 +615,7 @@ export default function BulkDeleteAlert({ isOpen, onClose, onSuccess }: BulkDele
                         const count = accounts.filter(acc => acc.main_acc && acc.main_acc.trim() === owner).length;
                         return (
                           <option key={owner} value={owner}>
-                            {owner} ({count})
+                            {formatMainAcc(owner)} ({count})
                           </option>
                         );
                       })}
@@ -714,7 +715,7 @@ export default function BulkDeleteAlert({ isOpen, onClose, onSuccess }: BulkDele
                         <div className="w-full aspect-square mb-3 rounded-lg overflow-hidden bg-black/50">
                           <img
                             src={account.image_url || '/images/bape.png'}
-                            alt={account.title}
+                            alt={formatTitle(account.title)}
                             className="w-full h-full object-contain"
                             onError={(e) => {
                               (e.target as HTMLImageElement).src = '/images/bape.png';
@@ -724,15 +725,15 @@ export default function BulkDeleteAlert({ isOpen, onClose, onSuccess }: BulkDele
 
                         {/* Info */}
                         <div className="space-y-1">
-                          <div className="text-white font-semibold text-sm truncate" title={account.title}>
-                            {account.title}
+                          <div className="text-white font-semibold text-sm truncate" title={formatTitle(account.title)}>
+                            {formatTitle(account.title)}
                           </div>
                           <div className="text-green-400 font-medium text-sm">
                             {formatPrice(account.price)}
                           </div>
                           {account.main_acc && (
-                            <div className="text-gray-400 text-xs truncate" title={account.main_acc}>
-                              👤 {account.main_acc}
+                            <div className="text-gray-400 text-xs truncate" title={formatMainAcc(account.main_acc)}>
+                              👤 {formatMainAcc(account.main_acc)}
                             </div>
                           )}
                           <div className="text-gray-500 text-xs flex items-center gap-1">
@@ -748,7 +749,7 @@ export default function BulkDeleteAlert({ isOpen, onClose, onSuccess }: BulkDele
                 </div>
                 {getFilteredAccounts().length === 0 && selectedOwner !== "all" && (
                   <div className="text-center py-8 text-gray-400">
-                    Không có tài khoản nào của chủ tài khoản "{selectedOwner}"
+                    Không có tài khoản nào của chủ tài khoản "{formatMainAcc(selectedOwner)}"
                   </div>
                 )}
               </>
