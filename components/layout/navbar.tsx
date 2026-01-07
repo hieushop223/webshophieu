@@ -18,7 +18,7 @@ interface NavbarProps {
   adminAvatar?: string;
 }
 
-export default function Navbar({ adminName = "Admin", adminAvatar = "/images/avatar.png" }: NavbarProps) {
+export default function Navbar({ adminName = "Admin", adminAvatar = "/images/avatar_1.png" }: NavbarProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isUCAlertOpen, setIsUCAlertOpen] = useState(false);
   const [isAddAccountAlertOpen, setIsAddAccountAlertOpen] = useState(false);

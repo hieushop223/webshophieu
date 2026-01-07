@@ -12,7 +12,7 @@ export default function Logo({ className = "" }: LogoProps) {
       {/* Logo ảnh bên trái */}
       <div className="relative flex-shrink-0 h-full flex items-center">
         <Image
-          src="/images/logo1.png"
+          src="/images/logo_1.png"
           alt="HIEU SHOP ACC Logo"
           width={100}
           height={100}
